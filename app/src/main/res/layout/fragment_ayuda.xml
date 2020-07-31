@@ -1,0 +1,38 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="drmascota.drmascota.ayuda">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/drMascota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="En muchas oportunidades con nuestras mascotas en brazos, y con la angustia propia de pensar que nuestro amigo fiel nos puede abandonar para siempre, salimos a la calle y a la primera persona que nos encontramos le lanzamos la pregunta ¿Sabe usted dónde hay una veterinaria? la mayoría de las veces la respuesta es ¡No! Eso se acabó, de ahora en adelante la Aplicacion “Dr. Mascota”, te va a decir ¡SÍ! Nuestra Aplicación, geolocaliza al instante el veterinario, tienda o servicio que tu mascota requiere, y la que está más cerca de tu casa. Esto puede marcar la diferencia para el bienestar de tu mascota y tu tranquilidad. Si no tienes mascota y quieres adoptar una, podrás encontrar la mejor opción en nuestras publicaciones y darás un hogar a un animalito que lo necesite." />
+
+        <TextView
+            android:id="@+id/contactos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Contactanos: www.drmascota.com" />
+        <TextView
+            android:id="@+id/version"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Version 1.0" />
+    </LinearLayout>
+
+</FrameLayout>

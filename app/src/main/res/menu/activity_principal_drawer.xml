@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio"
+            android:icon="@drawable/ic_home"
+            android:title="Inicio/Servicios" />
+        <item
+            android:id="@+id/nav_veterinarias"
+            android:icon="@drawable/ic_veterinarias"
+            android:title="Veterinarias" />
+        <item
+            android:id="@+id/nav_mapa"
+            android:icon="@drawable/ic_mapa"
+            android:title="Mapa" />
+        <item
+            android:id="@+id/nav_adopta_vida"
+            android:icon="@drawable/ic_adopta_vida"
+            android:title="Adopta una Vida" />
+        <item
+            android:id="@+id/nav_encuentra_mascota"
+            android:icon="@drawable/ic_encuentra_mascota"
+            android:title="Encuentra tu Mascota" />
+        <item
+            android:id="@+id/nav_fundaciones"
+            android:icon="@drawable/ic_fundaciones"
+            android:title="Fundaciones" />
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/ic_help"
+            android:title="Ayuda" />
+    </group>
+<!--
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+-->
+</menu>

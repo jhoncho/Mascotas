@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Vistas.Veterinaria.VeterinariaDetalleActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingLeft="5dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@color/colorPrimary">
+        <ImageView
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_margin="5dp"
+            android:onClick="backView"
+            android:src="@drawable/ic_back"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:text="Detalle del veterinario"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="15dp"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+    <ImageView
+        android:id="@+id/imagenVeterinaria"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_weight="0.94" />
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:text="Descripción"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/editTextLinea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:text="________________________________________________________________________________________"
+        android:textColor="#000000"
+        android:layout_marginTop="-15dp"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/descripcion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:text="Correo de Contacto"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/editTextLinea1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:text="________________________________________________________________________________________"
+        android:textColor="#000000"
+        android:layout_marginTop="-15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="15dp"/>
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:text="Telefono de Contacto"
+        android:textColor="#000000"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/editTextLinea2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:text="________________________________________________________________________________________"
+        android:textColor="#000000"
+        android:layout_marginTop="-15dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/telefonos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:textSize="15dp"/>
+
+    <Button
+        android:id="@+id/llamar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Llamar Ahora"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"/>
+</LinearLayout>
