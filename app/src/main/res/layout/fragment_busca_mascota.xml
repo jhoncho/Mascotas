@@ -8,12 +8,17 @@
 
     <Button
         android:id="@+id/btnAgregar"
-        android:layout_width="match_parent"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Reportar Macota Perdida" />
+        android:text="Reportar Macota Perdida"
+        android:background="@drawable/btn_fondo_color"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="10dp"/>
     <ListView
         android:id="@+id/listaMascotas"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"/>
 
 </LinearLayout>

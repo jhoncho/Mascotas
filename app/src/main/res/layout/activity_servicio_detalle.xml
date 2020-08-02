@@ -25,54 +25,58 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            android:text="Detalle del servicio"/>
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:text="Detalle del servicio"
+            android:layout_gravity="center"/>
 
     </LinearLayout>
 
     <TextView
         android:id="@+id/titulo"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        android:textStyle="bold" />
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_gravity="center" />
     <ImageView
         android:id="@+id/imagenServicio"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_weight="0.94" />
+        android:layout_weight="0.94"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center" />
 
     <TextView
         android:id="@+id/editText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:inputType="textPersonName"
-        android:textSize="15dp"
-        android:text="Descripción"
-        android:textColor="#000000"
+        android:layout_marginTop="10dp"
+        android:text="Descripción del servicio"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/editTextLinea"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:inputType="textPersonName"
-        android:textSize="15dp"
-        android:text="________________________________________________________________________________________"
-        android:textColor="#000000"
         android:layout_marginTop="-15dp"
-        android:textStyle="bold" />
-
-
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:inputType="textPersonName"
+        android:text="________________________________________________________________________________________"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
     <TextView
         android:id="@+id/descripcion"
         android:layout_width="wrap_content"
@@ -80,29 +84,32 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="15dp"
-        android:textSize="15dp"/>
+        android:textSize="16sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/editText1"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:inputType="textPersonName"
-        android:textSize="15dp"
         android:text="Correo de Contacto"
-        android:textColor="#000000"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/editTextLinea1"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:inputType="textPersonName"
-        android:textSize="15dp"
-        android:text="________________________________________________________________________________________"
-        android:textColor="#000000"
         android:layout_marginTop="-15dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:inputType="textPersonName"
+        android:text="________________________________________________________________________________________"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
     <TextView
@@ -112,29 +119,33 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="15dp"
-        android:textSize="15dp"/>
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"/>
     <TextView
         android:id="@+id/editText2"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_gravity="center"
         android:inputType="textPersonName"
-        android:textSize="15dp"
         android:text="Telefono de Contacto"
-        android:textColor="#000000"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/editTextLinea2"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:inputType="textPersonName"
-        android:textSize="15dp"
-        android:text="________________________________________________________________________________________"
-        android:textColor="#000000"
         android:layout_marginTop="-15dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="center"
+        android:inputType="textPersonName"
+        android:text="________________________________________________________________________________________"
+        android:textColor="@color/colorPrimary"
+        android:textSize="15sp"
         android:textStyle="bold" />
     <TextView
         android:id="@+id/telefonos"
@@ -143,14 +154,20 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="15dp"
-        android:textSize="15dp"/>
+        android:textSize="15sp"
+        android:textStyle="italic"
+        android:textColor="@color/black"/>
 
     <Button
         android:id="@+id/llamar"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="Llamar Ahora"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/btn_fondo_color"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 </LinearLayout>

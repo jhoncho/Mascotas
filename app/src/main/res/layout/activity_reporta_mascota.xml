@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Vistas.Mascota.MascotaReportaActivity">
+
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/AppbarPrincipal"
         android:layout_width="match_parent"
@@ -13,11 +15,13 @@
         android:background="@color/colorPrimary"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"></androidx.appcompat.widget.Toolbar>
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        </androidx.appcompat.widget.Toolbar>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,12 +29,12 @@
             android:layout_marginTop="-55dp"
             android:gravity="center_vertical"
             android:orientation="horizontal"
-            android:paddingRight="15dp">
+            android:paddingRight="15dp"
+            android:paddingEnd="15dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
                 android:paddingLeft="10dp"
@@ -50,12 +54,11 @@
                     android:layout_height="wrap_content"
                     android:text="Reportar mascota"
                     android:textColor="#fff"
-                    android:textSize="20dp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
             </LinearLayout>
            </LinearLayout>
-
     </com.google.android.material.appbar.AppBarLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -66,54 +69,76 @@
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Ingrese el titulo "
+            android:hint="Ingrese el titulo"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18sp"
+            android:textStyle="bold"
             android:inputType="textPersonName" />
 
         <ImageView
             android:id="@+id/imagenCargar"
-            android:layout_width="270dp"
-            android:layout_height="175dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
             android:layout_marginLeft="20dp"
-            app:srcCompat="@mipmap/ic_logo_oficial" />
+            android:layout_marginHorizontal="10dp"
+            app:srcCompat="@drawable/logomaskotas" />
 
         <Button
             android:id="@+id/btnImagenes"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Cargar Imagen" />
+            android:layout_gravity="center"
+            android:text="Cargar Imagen"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="@drawable/btn_fondo_color"/>
 
         <EditText
             android:id="@+id/txtDescripcion"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:ems="10"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
             android:hint="Describe a tu mascota"
             android:inputType="textMultiLine" />
 
         <EditText
             android:id="@+id/txtCorreo"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Pon tu correo de Contacto"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:textColor="@color/colorPrimary"
+            android:hint="Correo Electronico"
             android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/txtTelefono"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Pon tu telefono de Contacto"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="16sp"
+            android:hint="Telefono de Contacto"
             android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/btnReportar"
-            android:layout_width="match_parent"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:text="Reportar" />
-
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Publicar"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:background="@drawable/btn_fondo_color"/>
     </LinearLayout>
-
-
 </LinearLayout>

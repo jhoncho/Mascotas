@@ -8,4 +8,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="contato_principal">Contacto</string>
+    <string name="contato_descripcion">Si tienes dudas, consultas o alguna sugerencias, no dude en comunicarse con nosotros.</string>
+    <string name="title_activity_contactos">contactos</string>
 </resources>

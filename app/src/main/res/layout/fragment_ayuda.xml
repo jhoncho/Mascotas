@@ -1,38 +1,64 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="drmascota.drmascota.ayuda">
-    <LinearLayout
-        android:layout_width="fill_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/imagenlogo"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="80dp"
+        app:srcCompat="@drawable/logomaskotas" />
+
+    <TextView
+        android:id="@+id/textocontato"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:id="@+id/drMascota"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="En muchas oportunidades con nuestras mascotas en brazos, y con la angustia propia de pensar que nuestro amigo fiel nos puede abandonar para siempre, salimos a la calle y a la primera persona que nos encontramos le lanzamos la pregunta ¿Sabe usted dónde hay una veterinaria? la mayoría de las veces la respuesta es ¡No! Eso se acabó, de ahora en adelante la Aplicacion “Dr. Mascota”, te va a decir ¡SÍ! Nuestra Aplicación, geolocaliza al instante el veterinario, tienda o servicio que tu mascota requiere, y la que está más cerca de tu casa. Esto puede marcar la diferencia para el bienestar de tu mascota y tu tranquilidad. Si no tienes mascota y quieres adoptar una, podrás encontrar la mejor opción en nuestras publicaciones y darás un hogar a un animalito que lo necesite." />
-
-        <TextView
-            android:id="@+id/contactos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Contactanos: www.drmascota.com" />
-        <TextView
-            android:id="@+id/version"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:text="Version 1.0" />
-    </LinearLayout>
-
-</FrameLayout>
+        android:layout_below="@+id/imagenlogo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="120dp"
+        android:gravity="center"
+        android:text="@string/contato_principal"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:textStyle="italic" />
+    <TextView
+        android:id="@+id/textodescripcion"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textocontato"
+        android:text="@string/contato_descripcion"
+        android:textStyle="italic"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"/>
+    <Button
+        android:id="@+id/btn_whatsapp"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/textodescripcion"
+        android:background="@drawable/btn_fondo_color"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginEnd="80dp"
+        android:text="Whatsapp"
+        android:textColor="@color/white"
+        android:textSize="15sp"/>
+</RelativeLayout >
