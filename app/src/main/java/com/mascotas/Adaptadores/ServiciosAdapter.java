@@ -27,9 +27,13 @@ public class ServiciosAdapter extends BaseAdapter
 
     public ServiciosAdapter(Context applicationContext, ServiciosModel[] item)
     {
-        this.ctx=applicationContext;
-        this.item=item;
-        layoutInflater=(LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        try {
+            this.ctx=applicationContext;
+            this.item=item;
+            layoutInflater=(LayoutInflater)ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
 
     @Override

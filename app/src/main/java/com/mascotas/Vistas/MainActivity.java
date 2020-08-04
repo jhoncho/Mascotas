@@ -1,6 +1,7 @@
 package com.mascotas.Vistas;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -8,14 +9,29 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 import com.mascotas.R;
 import com.mascotas.Vistas.Ciudad.CiudadFragment;
 import com.mascotas.Vistas.Soporte.AyudaFragment;
 import com.mascotas.Vistas.Servicio.ServiciosFragment;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -68,8 +84,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportActionBar().setTitle(menuItem.getTitle());
                 break;
             case R.id.nav_mapa:
-                fragment = new CiudadFragment(2);
-                getSupportActionBar().setTitle(menuItem.getTitle());
+                if (validaPermisoGps(MainActivity.this)) {
+                    fragment = new CiudadFragment(2);
+                    getSupportActionBar().setTitle(menuItem.getTitle());
+                }
                 break;
             case R.id.nav_adopta_vida:
                 fragment = new CiudadFragment(3);
@@ -88,13 +106,116 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getSupportActionBar().setTitle(menuItem.getTitle());
                 break;
         }
-        //hace el acambio de fragmento
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.home_content, fragment)
-                .addToBackStack(null)
-                .commit();
+        if(fragment!=null) {
+            //hace el acambio de fragmento
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.home_content, fragment)
+                    .addToBackStack(null)
+                    .commit();
+        }
         //cierra el menu lateral
         drawableLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case 100://GPS
+                Log.wtf("grantResults: ", grantResults.length+" - "+grantResults[0]+" - "+grantResults[1]);
+                // ya tiene permisos?
+                if (grantResults.length == 2 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Fragment fragment = new CiudadFragment(2);
+                    getSupportActionBar().setTitle("Mapa");
+                    //hace el acambio de fragmento
+                    getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.home_content, fragment)
+                            .addToBackStack(null)
+                            .commit();
+                    //cierra el menu lateral
+                    drawableLayout.closeDrawer(GravityCompat.START);
+                } else {
+                    darPermisosManual(this);
+                }
+                break;
+        }
+    }
+
+    //    PERMISOS
+    public boolean validaPermisoGps(final Activity context) {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+            return true;
+        }
+
+        //YA TIENE LOS PERMISOS?
+        if ((context.checkSelfPermission(ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+                && (context.checkSelfPermission(ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)) {
+            return true;
+        }
+        //SI NO TIENE PIDE PERMISOS
+        if ((context.shouldShowRequestPermissionRationale(ACCESS_FINE_LOCATION))
+                || (context.shouldShowRequestPermissionRationale(ACCESS_COARSE_LOCATION))) {
+
+            android.app.AlertDialog.Builder dialo = new android.app.AlertDialog.Builder(context);
+            dialo.setCancelable(false);
+            dialo.setTitle("Permisos desactivados");
+            dialo.setMessage("Debe aceptar los permisos para el correto funcionamiento de la aplicacion");
+
+            dialo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    context.requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, 100);
+                }
+            });
+
+            dialo.show();
+        } else {
+            final android.app.AlertDialog.Builder dialo = new android.app.AlertDialog.Builder(context);
+            dialo.setCancelable(false);
+            dialo.setTitle("Hola, como estas? ");
+            dialo.setMessage(context.getString(R.string.app_name) + " necesita un permiso para que la aplicacion funcione correctamente.");
+
+            dialo.setPositiveButton("Dar permiso", new DialogInterface.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    context.requestPermissions(new String[]{ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION}, 100);
+                    dialogInterface.dismiss();
+                }
+            });
+            dialo.show();
+            ;
+        }
+        return false;
+    }
+
+    public void darPermisosManual(final Context context) {
+        final android.app.AlertDialog.Builder dialo = new android.app.AlertDialog.Builder(context);
+        dialo.setTitle("Permisos desactivados");
+        dialo.setMessage("Desea configurar los permisos de forma manual?");
+
+        dialo.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                Uri uri = Uri.fromParts("package", context.getPackageName(), null);
+                intent.setData(uri);
+                context.startActivity(intent);
+                dialogInterface.dismiss();
+            }
+        });
+        dialo.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Toast.makeText(context, "Permisos no aceptados", Toast.LENGTH_SHORT).show();
+                dialogInterface.dismiss();
+            }
+        });
+        dialo.show();
     }
 }

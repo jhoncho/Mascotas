@@ -15,9 +15,7 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.Map;
 
-/**
- * Created by Belal on 10/24/2017.
- */
+
 
 public class VolleyRequestPostMultipart extends Request<NetworkResponse> {
 

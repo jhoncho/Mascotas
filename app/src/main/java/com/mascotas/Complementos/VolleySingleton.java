@@ -6,11 +6,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 
-/**
- * Creado por Hermosa Programación.
- *
- * Clase que representa un cliente HTTP Volley
- */
+
 public final class VolleySingleton {
     // Atributos
     private static VolleySingleton singleton;
