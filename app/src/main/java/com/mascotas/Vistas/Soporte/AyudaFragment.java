@@ -28,7 +28,7 @@ import com.mascotas.Vistas.Veterinaria.VeterinariaMapaFragment;
 public class AyudaFragment extends Fragment {
 
     private Context context;
-    Button whatsaap;
+
 
     public AyudaFragment() {
         // Required empty public constructor
@@ -49,11 +49,22 @@ public class AyudaFragment extends Fragment {
                              Bundle savedInstanceState)
     {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ayuda, container, false);
+        View whatsapp=inflater.inflate(R.layout.fragment_ayuda, container, false);
 
+        //codigo para contactarse por whatsapp
+        Button whatsaap = (Button) whatsapp.findViewById(R.id.btn_whatsapp);
 
+        whatsaap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = "https://api.whatsapp.com/send?phone="+"59169977949";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);
+            }
+        });
 
-
+        return whatsapp;
 
     }
 
