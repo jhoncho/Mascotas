@@ -75,13 +75,13 @@ public class VeterinariaMapaFragment extends Fragment implements OnMapReadyCallb
     }
 
     public void listaLlena(final VeterinarioLocalizacionModel[] items) {
-//        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacionOrigen, 5), 5000, null);
+        //mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ubicacionOrigen, 5), 5000, null);
 
         for (int i = 0; i < items.length; i++) {
 
             MarkerOptions marketItem=new MarkerOptions()
                     .snippet(items[i].getTitulo_veterinario())
-                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_marcador))
+                    .icon(BitmapDescriptorFactory.fromResource(R.drawable.marcador))
                     .position(new LatLng(Double.parseDouble(items[i].getLatitud()), Double.parseDouble(items[i].getLongitud())))
                     .title(items[i].getTitulo_veterinario());
             Marker markerMapa =mMap.addMarker(marketItem);

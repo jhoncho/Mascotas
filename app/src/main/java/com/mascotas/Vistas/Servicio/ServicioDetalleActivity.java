@@ -45,6 +45,8 @@ public class ServicioDetalleActivity extends AppCompatActivity {
         try {
             tvtitulo.setText(data.getString("titulo_servicio"));
             tvdescripcion.setText(data.getString("descripcion_servicio"));
+            tvCorreo.setText(data.getString("correo"));
+            tvTelefono.setText(data.getString("telefono"));
             Glide.with(this)
                     .load(Constantes.URL_DIR_SERVICIO+data.getString("imagen_servicio"))
                     .asBitmap()

@@ -4,32 +4,32 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_inicio"
-            android:icon="@drawable/ic_home"
+            android:icon="@drawable/inicio"
             android:title="Inicio/Servicios" />
         <item
             android:id="@+id/nav_veterinarias"
-            android:icon="@drawable/ic_veterinarias"
+            android:icon="@drawable/veterinario"
             android:title="Veterinarias" />
         <item
             android:id="@+id/nav_mapa"
-            android:icon="@drawable/ic_mapa"
+            android:icon="@drawable/gps_veterinaria"
             android:title="Mapa" />
         <item
             android:id="@+id/nav_adopta_vida"
-            android:icon="@drawable/ic_adopta_vida"
-            android:title="Adopta una Vida" />
-        <item
-            android:id="@+id/nav_encuentra_mascota"
-            android:icon="@drawable/ic_encuentra_mascota"
+            android:icon="@drawable/perdido"
             android:title="Encuentra tu Mascota" />
         <item
+            android:id="@+id/nav_encuentra_mascota"
+            android:icon="@drawable/perro_corazon"
+            android:title="Adopta una vida" />
+        <item
             android:id="@+id/nav_fundaciones"
-            android:icon="@drawable/ic_fundaciones"
-            android:title="Fundaciones" />
+            android:icon="@drawable/albergue"
+            android:title="Albergue" />
         <item
             android:id="@+id/nav_help"
-            android:icon="@drawable/ic_help"
-            android:title="Ayuda" />
+            android:icon="@drawable/contacto"
+            android:title="Contactenos" />
     </group>
 
 </menu>

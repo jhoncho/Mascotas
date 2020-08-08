@@ -4,12 +4,15 @@ public class ServiciosModel {
     private String id_servicio;
     private String titulo_servicio, descripcion_servicio, imagen_servicio;
     private String estado, t_ciudad_id_ciudad;
+    private String correo, telefono;
 
-    public ServiciosModel(String id_servicio, String titulo_servicio, String descripcion_servicio, String imagen_servicio, String estado, String t_ciudad_id_ciudad) {
+    public ServiciosModel(String id_servicio, String titulo_servicio, String descripcion_servicio, String imagen_servicio,String correo, String telefono, String estado, String t_ciudad_id_ciudad) {
         this.id_servicio = id_servicio;
         this.titulo_servicio = titulo_servicio;
         this.descripcion_servicio = descripcion_servicio;
         this.imagen_servicio = imagen_servicio;
+        this.correo=correo;
+        this.telefono=telefono;
         this.estado = estado;
         this.t_ciudad_id_ciudad = t_ciudad_id_ciudad;
     }
@@ -44,6 +47,22 @@ public class ServiciosModel {
 
     public void setImagen_servicio(String imagen_servicio) {
         this.imagen_servicio = imagen_servicio;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getEstado() {

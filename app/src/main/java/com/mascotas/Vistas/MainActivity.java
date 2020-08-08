@@ -49,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawableLayout.addDrawerListener(toggle);
         toggle.syncState();
 
+
         //seccion de menu
         NavigationView navigationView = findViewById(R.id.navigation_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 .replace(R.id.home_content, new ServiciosFragment(String.valueOf(_CIUDAD_ID)))
                 .addToBackStack(null)
                 .commit();
+
+        //PARA QUE LOS INCONOS DEL MENU ESTEN A COLORES
+        navigationView.setItemIconTintList(null);
     }
 
     @Override
