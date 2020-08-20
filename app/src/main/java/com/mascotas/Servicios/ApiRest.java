@@ -1,7 +1,6 @@
 package com.mascotas.Servicios;
 
 import android.app.ProgressDialog;
-import android.graphics.Bitmap;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -31,17 +30,16 @@ import com.mascotas.Vistas.Fundaciones.FundacionesFragment;
 import com.mascotas.Vistas.Mascota.MascotaEncuentraDetalleActivity;
 import com.mascotas.Vistas.Mascota.MascotaReportaActivity;
 import com.mascotas.Vistas.Mascota.MascotasEncuentraFragment;
+import com.mascotas.Vistas.Veterinaria.VeterinariaDetalleActivity;
 import com.mascotas.Vistas.Veterinaria.VeterinariaMapaFragment;
 import com.mascotas.Vistas.Servicio.ServicioDetalleActivity;
 import com.mascotas.Vistas.Servicio.ServiciosFragment;
-import com.mascotas.Vistas.Veterinaria.VeterinariaDetalleActivity;
 import com.mascotas.Vistas.Veterinaria.VeterinariaFragment;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 

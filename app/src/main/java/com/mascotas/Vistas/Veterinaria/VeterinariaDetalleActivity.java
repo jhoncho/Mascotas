@@ -1,8 +1,8 @@
 package com.mascotas.Vistas.Veterinaria;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -10,9 +10,12 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.github.snowdream.android.widget.SmartImageView;
 import com.mascotas.Aplication.Constantes;
 import com.mascotas.R;
 import com.mascotas.Servicios.ApiRest;
@@ -21,7 +24,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class VeterinariaDetalleActivity extends AppCompatActivity {
-
     ImageView imageView;
     TextView tvtitulo, tvdescripcion,tvCorreo,tvTelefono;
     Button llamada;
@@ -58,9 +60,9 @@ public class VeterinariaDetalleActivity extends AppCompatActivity {
             llamada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent in = new Intent(Intent.ACTION_CALL);
-                    in.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
-                    startActivity(in);
+                    Intent i = new Intent(Intent.ACTION_CALL);
+                    i.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
+                    startActivity(i);
                 }
             });
 

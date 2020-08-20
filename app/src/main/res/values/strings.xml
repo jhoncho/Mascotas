@@ -13,4 +13,7 @@
     <string name="contato_principal" translatable="false">Contacto</string>
     <string name="contato_descripcion" translatable="false">Si tienes dudas, consultas o alguna sugerencias, no dude en comunicarse con nosotros.</string>
     <string name="title_activity_contactos" translatable="false">contactos</string>
+
+
+
 </resources>

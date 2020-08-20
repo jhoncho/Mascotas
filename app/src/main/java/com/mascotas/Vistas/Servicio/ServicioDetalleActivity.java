@@ -22,7 +22,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class ServicioDetalleActivity extends AppCompatActivity {
-
     ImageView imageView;
     TextView tvtitulo, tvdescripcion, tvCorreo, tvTelefono;
     Button llamada;
@@ -47,8 +46,8 @@ public class ServicioDetalleActivity extends AppCompatActivity {
         try {
             tvtitulo.setText(data.getString("titulo_servicio"));
             tvdescripcion.setText(data.getString("descripcion_servicio"));
-            tvCorreo.setText(data.getString("correo"));
             tvTelefono.setText(data.getString("telefono"));
+            tvCorreo.setText(data.getString("correo"));
             Glide.with(this)
                     .load(Constantes.URL_DIR_SERVICIO+data.getString("imagen_servicio"))
                     .asBitmap()
@@ -56,17 +55,14 @@ public class ServicioDetalleActivity extends AppCompatActivity {
                     .skipMemoryCache(false)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imageView);
-
             llamada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(Intent.ACTION_CALL);
-                    i.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
-                    startActivity(i);
+                    Intent intent = new Intent(Intent.ACTION_CALL);
+                    intent.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
+                    startActivity(intent);
                 }
             });
-
-
         } catch (JSONException e) {
             e.printStackTrace();
         }
