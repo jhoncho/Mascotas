@@ -118,7 +118,7 @@ public class VeterinariaMapaFragment extends Fragment implements OnMapReadyCallb
                         Marker markerMapa= mMap.addMarker(new MarkerOptions().position(new LatLng(location.getLatitude(), location.getLongitude())).title("Mi posicion Actual"));
                         CameraPosition cameraPosition = CameraPosition.builder()
                                 .target(new LatLng(location.getLatitude(), location.getLongitude()))
-                                .zoom(13)
+                                .zoom(15)
                                 .build();
                         markerMapa.setTag(-1);
                         mMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));

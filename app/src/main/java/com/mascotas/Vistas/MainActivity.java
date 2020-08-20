@@ -179,7 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             final android.app.AlertDialog.Builder dialo = new android.app.AlertDialog.Builder(context);
             dialo.setCancelable(false);
-            dialo.setTitle("Hola, como estas? ");
+            dialo.setTitle("Bienvenido a Maskotas ");
             dialo.setMessage(context.getString(R.string.app_name) + " necesita un permiso para que la aplicacion funcione correctamente.");
 
             dialo.setPositiveButton("Dar permiso", new DialogInterface.OnClickListener() {
