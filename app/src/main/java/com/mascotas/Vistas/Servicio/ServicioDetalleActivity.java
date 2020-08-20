@@ -2,6 +2,8 @@ package com.mascotas.Vistas.Servicio;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -54,6 +56,17 @@ public class ServicioDetalleActivity extends AppCompatActivity {
                     .skipMemoryCache(false)
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(imageView);
+
+            llamada.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i = new Intent(Intent.ACTION_CALL);
+                    i.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
+                    startActivity(i);
+                }
+            });
+
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

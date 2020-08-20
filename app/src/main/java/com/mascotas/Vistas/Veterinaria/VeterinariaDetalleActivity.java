@@ -58,9 +58,9 @@ public class VeterinariaDetalleActivity extends AppCompatActivity {
             llamada.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i = new Intent(Intent.ACTION_CALL);
-                    i.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
-                    startActivity(i);
+                    Intent in = new Intent(Intent.ACTION_CALL);
+                    in.setData(Uri.parse("tel:"+tvTelefono.getText().toString()));
+                    startActivity(in);
                 }
             });
 

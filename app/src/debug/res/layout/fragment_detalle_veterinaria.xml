@@ -126,7 +126,7 @@
             android:inputType="textPersonName"
             android:text="________________________________________________________________________________________"
             android:textColor="@color/colorPrimary"
-            android:textSize="15dp"
+            android:textSize="15sp"
             android:textStyle="bold" />
         <TextView
             android:id="@+id/telefonos"
